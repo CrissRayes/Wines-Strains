@@ -25,7 +25,23 @@
     <%= form.label :color, style: "display: block" %>
     <%= form.text_field :color %>
   </div>
+<br>
+<br>
 
+  <div class="field">
+    <%= form.label :strains, style: "display: block" %>
+    <%= form.collection_check_boxes(:strain_ids, Strain.all, :id, :name) do |b| %>
+      <%= b.label class:"label-checkbox" do %>
+        <%= b.check_box + b.text %>
+        <div class="field">
+          <%= form.label :percentage, style: "display: block"%>
+          <%= form.text_field :percentage %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+<br>
   <div>
     <%= form.submit %>
   </div>
