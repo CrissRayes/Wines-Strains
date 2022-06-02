@@ -2,13 +2,32 @@
 
 <h1>Wines</h1>
 
+<%= link_to "New wine", new_wine_path %>
 <div id="wines">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Brand</th>
+          <th>Category</th>
+          <th>Color</th>
+          <th>%</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+      <tbody>
   <% @wines.each do |wine| %>
-    <%= render wine %>
-    <p>
-      <%= link_to "Show this wine", wine %>
-    </p>
+        <tr>
+          <td><%= wine.brand %></td>
+          <td><%= wine.category %></td>
+          <td><%= wine.color %></td>
+          <td></td>
+          <td><%= link_to "Show", wine %></td>
+        </tr>
   <% end %>
+      </tbody>
+    </table>
+    <p>
+      
+    </p>
 </div>
 
-<%= link_to "New wine", new_wine_path %>

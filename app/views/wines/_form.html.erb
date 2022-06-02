@@ -34,7 +34,7 @@
       <%= b.label class:"label-checkbox" do %>
         <%= b.check_box + b.text %>
         <div class="field">
-          <%= form.label :percentage, style: "display: block"%>
+          <%= form.label :percentage, "%",  style: "display: block"%>
           <%= form.text_field :percentage %>
         </div>
       <% end %>

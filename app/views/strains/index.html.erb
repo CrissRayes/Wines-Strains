@@ -2,13 +2,23 @@
 
 <h1>Strains</h1>
 
+<%= link_to "New strain", new_strain_path %>
 <div id="strains">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+      <tbody>
   <% @strains.each do |strain| %>
-    <%= render strain %>
-    <p>
-      <%= link_to "Show this strain", strain %>
-    </p>
+        <tr>
+          <td><%= strain.name%></td>
+          <td><%= link_to "Show", strain %></td>
+        </tr>
   <% end %>
+      </tbody>
+    </table>
 </div>
 
-<%= link_to "New strain", new_strain_path %>
