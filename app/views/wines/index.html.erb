@@ -10,7 +10,7 @@
           <th>Brand</th>
           <th>Category</th>
           <th>Color</th>
-          <th>%</th>
+          <th>Strains</th>
           <th colspan="2"></th>
         </tr>
       </thead>
@@ -20,7 +20,7 @@
           <td><%= wine.brand %></td>
           <td><%= wine.category %></td>
           <td><%= wine.color %></td>
-          <td></td>
+          <td><%= wine.strains.map(&:name).join(',') %></td>
           <td><%= link_to "Show", wine %></td>
         </tr>
   <% end %>

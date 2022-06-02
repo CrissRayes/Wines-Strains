@@ -15,7 +15,8 @@
   </p>
 
   <p>
-    <strong>%:</strong>
+    <strong>Strains:</strong>
+    <%= wine.strains.map(&:name).join(',') %>
   </p>
 
 </div>

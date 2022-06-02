@@ -12,33 +12,25 @@
   <% end %>
 
   <div>
-    <%= form.label :brand, style: "display: block" %>
-    <%= form.text_field :brand %>
+    <%= form.label :brand, "Brand*", style: "display: block" %>
+    <%= form.text_field :brand, required: true %>
   </div>
 
   <div>
-    <%= form.label :category, style: "display: block" %>
-    <%= form.text_field :category %>
+    <%= form.label :category, "Category*", style: "display: block" %>
+    <%= form.select :category, ["Semi Crianza", "Crianza", "Reserva", "Gran Reserva"], required: true %>
   </div>
 
   <div>
     <%= form.label :color, style: "display: block" %>
-    <%= form.text_field :color %>
+    <%= form.select :color, ["Red", "White", "Rosé"], required: true  %>
   </div>
 <br>
 <br>
 
   <div class="field">
     <%= form.label :strains, style: "display: block" %>
-    <%= form.collection_check_boxes(:strain_ids, Strain.all, :id, :name) do |b| %>
-      <%= b.label class:"label-checkbox" do %>
-        <%= b.check_box + b.text %>
-        <div class="field">
-          <%= form.label :percentage, "%",  style: "display: block"%>
-          <%= form.text_field :percentage %>
-        </div>
-      <% end %>
-    <% end %>
+    <%= form.collection_check_boxes :strain_ids, Strain.order(:name), :id, :name %>
   </div>
 
 <br>
