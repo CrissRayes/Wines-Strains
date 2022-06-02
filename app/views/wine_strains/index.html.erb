@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Wine strains</h1>
+
+<%= link_to "New wine strain", new_wine_strain_path %>
+<div id="wine_strains">
+  <table>
+    <thead>
+      <tr>
+        <th>Wine</th>
+        <th>Strain</th>
+        <th>%</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @wine_strains.each do |wine_strain| %>
+        <tr>
+          <td><%= wine_strain.wine.brand %></td>
+          <td><%= wine_strain.strain.name %></td>
+          <td><%= wine_strain.percentage %></td>
+          <td><%= link_to "Show", wine_strain %></td>
+          <td><%= link_to "Edit", edit_wine_strain_path(wine_strain) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
