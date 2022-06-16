@@ -12,8 +12,17 @@
   </head>
 
   <body class="container">
-    <%= link_to "Wines", wines_path %>
-    <%= link_to "Strains", strains_path %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <% if user_signed_in? %>
+      <p><%= current_user.email %> | <%= link_to 'Cerrar Sesión', destroy_user_session_path, data: { "turbo-method": :delete } %></p>
+          <%= link_to 'Inicio', root_path %> | 
+          <%= link_to 'Vinos', wines_path %> | 
+          <%= link_to 'Cepas', strains_path %> |
+    <% end %>
+
+
     <%= yield %>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>

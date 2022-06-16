@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :strains
   resources :wines
-  #resources :wine_strains
-  root "wines#index"
+  root "home#index"
 end
