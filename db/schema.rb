@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_16_135507) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_17_171416) do
+  create_table "oenologist_positions", force: :cascade do |t|
+    t.integer "oenologist_id"
+    t.integer "position_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["oenologist_id"], name: "index_oenologist_positions_on_oenologist_id"
+    t.index ["position_id"], name: "index_oenologist_positions_on_position_id"
+  end
+
+  create_table "oenologists", force: :cascade do |t|
+    t.string "name"
+    t.string "age"
+    t.string "nacionality"
+    t.string "company"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "positions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "strains", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
