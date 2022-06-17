@@ -24,6 +24,12 @@
           <% if can? :read, Strain %>
           <%= link_to 'Cepas', strains_path %> |
         <% end %>
+        <% if can? :read, Oenologist %>
+          <%= link_to 'Enólogos', oenologists_path %> | 
+        <% end %>
+        <% if can? :read, Position %>
+          <%= link_to 'Cargos', positions_path %>
+        <% end %>
     <% end %>
 
 
