@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_17_174956) do
-  create_table "oenologist_position", force: :cascade do |t|
-    t.integer "oneologist_id"
+ActiveRecord::Schema[7.0].define(version: 2022_06_17_212714) do
+  create_table "oenologist_positions", force: :cascade do |t|
+    t.integer "oenologist_id"
     t.integer "position_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["oneologist_id"], name: "index_oenologist_position_on_oneologist_id"
-    t.index ["position_id"], name: "index_oenologist_position_on_position_id"
+    t.index ["oenologist_id"], name: "index_oenologist_positions_on_oenologist_id"
+    t.index ["position_id"], name: "index_oenologist_positions_on_position_id"
   end
 
   create_table "oenologists", force: :cascade do |t|

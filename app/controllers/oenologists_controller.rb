@@ -1,4 +1,5 @@
 class OenologistsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_oenologist, only: %i[ show edit update destroy ]
 
   # GET /oenologists or /oenologists.json
@@ -65,6 +66,6 @@ class OenologistsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def oenologist_params
-      params.require(:oenologist).permit(:name, :age, :nacionality, :company)
+      params.require(:oenologist).permit(:name, :age, :nacionality, :company, { position_ids:[] })
     end
 end
