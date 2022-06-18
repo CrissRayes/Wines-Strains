@@ -1,18 +1,20 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Wines</h1>
+<h1>Vinos</h1>
 
-<%= link_to "New wine", new_wine_path %>
+<% if can? :manage, Wine %>
+<%= link_to "Nuevo Vino", new_wine_path %>
+<% end %>
 <div id="wines">
     <table class="table">
       <thead>
         <tr>
-          <th>Brand</th>
-          <th>Category</th>
+          <th>Marca</th>
+          <th>Categoría</th>
           <th>Color</th>
-          <th>Strains</th>
-          <th>Note</th>
-          <th>Oenologists</th>
+          <th>Cepas</th>
+          <th>Nota</th>
+          <th>Enólogo</th>
           <th></th>
         </tr>
       </thead>
@@ -25,7 +27,12 @@
           <td><%= wine.strains.map(&:name).join(',') %></td>
           <td><%= wine.note %></td>
           <td><%= wine.oenologists.map(&:name).join(',') %></td>
-          <td><%= link_to "Show", wine %></td>
+          <td><%= link_to "Ver", wine %></td>
+          <td>
+            <% if can? :update, Wine %>
+             <%= link_to "Editar", edit_wine_path(wine) %>
+            <% end %>
+          </td>
         </tr>
   <% end %>
       </tbody>

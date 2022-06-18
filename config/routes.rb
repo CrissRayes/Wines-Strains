@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :oenologists
   resources :strains
   resources :wines
-  root "home#index"
+  root "wines#index"
 end

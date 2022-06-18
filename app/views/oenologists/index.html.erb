@@ -1,14 +1,30 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Oenologists</h1>
+<h1>Enólogos</h1>
 
-<div id="oenologists">
+<%= link_to "Nuevo Enólogo", new_oenologist_path %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Edad</th>
+      <th>Nacionalidad</th>
+      <th>Compañía</th>
+      <th>Cargos</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
   <% @oenologists.each do |oenologist| %>
-    <%= render oenologist %>
-    <p>
-      <%= link_to "Show this oenologist", oenologist %>
-    </p>
+    <tr>
+      <td><%= oenologist.name %></td>
+      <td><%= oenologist.age %></td>
+      <td><%= oenologist.nacionality %></td>
+      <td><%= oenologist.company %></td>
+      <td><%= oenologist.positions.map(&:name).join(',') %></td>
+      <td><%= link_to "Ver", oenologist %></td>
+    </tr>
   <% end %>
-</div>
-
-<%= link_to "New oenologist", new_oenologist_path %>
+  </tbody>
+</table>

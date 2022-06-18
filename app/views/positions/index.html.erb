@@ -1,14 +1,22 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Positions</h1>
+<h1>Cargos</h1>
 
-<div id="positions">
+<%= link_to "Nuevo Cargo", new_position_path %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Cargo</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
   <% @positions.each do |position| %>
-    <%= render position %>
-    <p>
-      <%= link_to "Show this position", position %>
-    </p>
+    <tr>
+      <td><%= position.name %></td>
+      <td><%= link_to "Ver", position %></td>
+    </tr>
   <% end %>
-</div>
-
-<%= link_to "New position", new_position_path %>
+  </tbody>
+</table>
