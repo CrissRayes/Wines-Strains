@@ -38,6 +38,11 @@
     <%= form.text_field :note %>
   </div>
 
+  <div class="field">
+    <%= form.label :oenologists, style: "display: block" %>
+    <%= form.collection_check_boxes :oenologist_ids, Oenologist.order(:name), :id, :name %>
+  </div>
+
 <br>
   <div>
     <%= form.submit %>

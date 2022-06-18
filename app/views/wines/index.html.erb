@@ -12,6 +12,7 @@
           <th>Color</th>
           <th>Strains</th>
           <th>Note</th>
+          <th>Oenologists</th>
           <th></th>
         </tr>
       </thead>
@@ -23,6 +24,7 @@
           <td><%= wine.color %></td>
           <td><%= wine.strains.map(&:name).join(',') %></td>
           <td><%= wine.note %></td>
+          <td><%= wine.oenologists.map(&:name).join(',') %></td>
           <td><%= link_to "Show", wine %></td>
         </tr>
   <% end %>
