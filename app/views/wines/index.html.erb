@@ -11,7 +11,8 @@
           <th>Category</th>
           <th>Color</th>
           <th>Strains</th>
-          <th colspan="2"></th>
+          <th>Note</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -21,6 +22,7 @@
           <td><%= wine.category %></td>
           <td><%= wine.color %></td>
           <td><%= wine.strains.map(&:name).join(',') %></td>
+          <td><%= wine.note %></td>
           <td><%= link_to "Show", wine %></td>
         </tr>
   <% end %>

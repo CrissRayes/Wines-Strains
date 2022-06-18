@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_17_212714) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_18_004822) do
   create_table "oenologist_positions", force: :cascade do |t|
     t.integer "oenologist_id"
     t.integer "position_id"
@@ -70,6 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_17_212714) do
     t.string "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "note"
   end
 
 end

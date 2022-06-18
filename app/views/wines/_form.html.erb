@@ -33,6 +33,11 @@
     <%= form.collection_check_boxes :strain_ids, Strain.order(:name), :id, :name %>
   </div>
 
+  <div class="field">
+    <%= form.label :note, style: "display: block" %>
+    <%= form.text_field :note %>
+  </div>
+
 <br>
   <div>
     <%= form.submit %>
